@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% include  '_navbar.html.twig' %}
+        <div class="container-fluid mt-3">
+{#            {% include  '_flashAlert.html.twig' %}#}
+{#            {{ alert('ceci est un message','success') }}#}
+            {{ flashAlert('success') }}
+            {% block body %}{% endblock %}
+        </div>
+            {{ encore_entry_script_tags('app') }}
+            {% block javascripts %}{% endblock %}
+
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title  %} Liste des contacts {% endblock %}
+
+{% block body %}
+
+    <h2>Liste des sociétés </h2>
+
+    <table class="table">
+        {% for c in companys %}
+            <tr>
+                <td>
+                    {{ c.nameCompagny }}
+                </td>
+                <td>
+                    <a href="{{ path('app_compagny_showcompany', {'id': c.id}) }}">afficher</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
